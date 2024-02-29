@@ -190,7 +190,7 @@ def main():
                             df= pd.DataFrame.from_records(pdf_contents,columns=["page","content"])
                             try:                            
                                 qclient.create_collection(
-                                    collection_name=directory,
+                                    collection_name=category,
                                     vectors_config=models.VectorParams(
                                     size=encoder.get_sentence_embedding_dimension(),  # Vector size is defined by used model
                                     distance=models.Distance.COSINE,
