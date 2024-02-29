@@ -11,7 +11,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from botocore.exceptions import ClientError
 from botocore.client import Config
-api_key=os.getenv("QDRANT_API_KEY")
+api_key=st.secrets["QDRANT_API_KEY"]
 public_url = "https://pub-e35f1eea0f994d01831e4b2431dc977c.r2.dev"
 
 
@@ -92,8 +92,8 @@ def upload_file_to_cloudflare_r2(client, bucket_name, file_object):
             return f"Error checking file existence: {str(e)}"
 
 # Initialize the S3 client for Cloudflare R2
-access_key = os.getenv("ACCESS_KEY")
-secret_key = os.getenv("SECRET_KEY")
+access_key = st.secrets["ACCESS_KEY"]
+secret_key = st.secrets["SECRET_KEY"]
 r2_endpoint_url = 'https://4da7499998832558c2f0ba2a167c4ca6.r2.cloudflarestorage.com/pharma'
 
 session = boto3.session.Session()
