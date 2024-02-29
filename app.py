@@ -39,7 +39,7 @@ def modify_pdf_url(original_url, new_base_url,page_number):
 def perform_search(query,collection):
     encoded_query = encoder.encode(query).tolist()
     hits = qclient.search(
-        collection_name="Legislation",
+        collection_name=collection,
         query_vector=encoded_query,
         limit=3,
     )
