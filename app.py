@@ -129,8 +129,8 @@ def main():
     if 'search_results' not in st.session_state:
         st.session_state["search_results"] = ""
     # Define your tabs
-    tab1, tab2 = st.tabs(["Search", "File Upload"])
     category = st.selectbox("Select Category", ["Legislation", "Background Reading"])
+    tab1, tab2 = st.tabs(["Search", "File Upload"])
     
     with tab1:
         st.header("Search")
