@@ -130,10 +130,10 @@ def main():
         st.session_state["search_results"] = ""
     # Define your tabs
     tab1, tab2 = st.tabs(["Search", "File Upload"])
+    category = st.selectbox("Select Category", ["Legislation", "Background Reading"])
     
     with tab1:
         st.header("Search")
-        category = st.selectbox("Select Category", ["Legislation", "Background Reading"])
         query = st.text_input("Enter your search query:", "")
 
         if st.button("Search"): 
@@ -174,10 +174,6 @@ def main():
             uploaded_file = st.file_uploader("Choose a PDF file", type=['pdf'])
             if uploaded_file is not None:
                 st.success("File successfully uploaded.")
-
-                # Selection box for the category of the file
-                category = st.selectbox("Select Category", ["Legislation", "Background Reading"])
-
                 # Metadata input fields
                 st.subheader("Enter Metadata - unused for now but we could add country or useful stuff to filter on later")
                 Country= st.text_input("Country")
